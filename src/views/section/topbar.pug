@@ -1,0 +1,45 @@
+style.
+  ul {  
+  padding: 20px;
+  }
+  @media screen and (min-width: 768px) {
+  li {
+  font-size: 17px;
+  }
+  }
+  @media screen and (max-width: 1000px) {
+  li {
+  font-size: 11px;
+  }
+  }
+
+nav.navbar.navbar-expand-md.bg-danger.px-5.py-0.m-0.navbar-dark
+  .container-fluid
+    a.navbar-brand(href="/").ml-5.m-auto
+      img(src="/images/logo.svg", alt="logo" width="100" height="100") 
+
+    button.navbar-toggler(type='button', data-toggle='collapse',data-target='#navbarSupportedContent',aria-controls='navbarSupportedContent',aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+
+    .collapse.navbar-collapse.text-right(id='navbarSupportedContent')
+      if promotions !=""
+        ul.navbar-nav.text-capitalize.ml-2
+          li.nav-item.font-weight-bold
+            a.nav-link.text-white(href="/#promotion") promotions
+
+      ul.navbar-nav.text-capitalize.m-auto.text-size 
+        li.nav-item 
+          a.nav-link(href="/").text-white acceuil
+        li.nav-item 
+          a.nav-link(href="/menu/menu.pdf").text-white menu
+        li.nav-item 
+          a.nav-link(href="/reservation").text-white réservation
+        li.nav-item
+          a.nav-link(href="/#apropos").text-white à propos
+        li.nav-item
+          a.nav-link(href="/galerie").text-white galerie
+      ul.navbar-nav
+        li.nav-item.font-weight-bold 
+          a.nav-link.text-md-center.text-warning.font-weight-bold(href="tel:+514-714-5794") Nous Livrons
+            br 
+            |450-655-2333

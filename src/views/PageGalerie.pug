@@ -1,0 +1,14 @@
+
+extends pageLayout
+block content
+  .container.bg-white
+    .card-deck.my-5(style='justify-content: center;')
+      .row
+        each cardItem in galerieCards
+          .col-lg-4.col-md-6
+            .card.text-center.border-0(style='background-color: white;')
+              .card-body
+                a(href= "/galerie/" + cardItem.id)
+                  img.img-fluid(src= cardItem.src alt= cardItem.alt data-toggle='tooltip' title= cardItem.tooltip)
+              .card-footer.px-5(style='background-color: white;')
+                h2(style='font-size:18px')=  cardItem.titre 

@@ -1,0 +1,31 @@
+.container-fluid.bg-danger
+  br
+  if promotions !=""
+    h1.text-center.text-white Promotions en vigeur
+    br
+    #carouselPromo.carousel.slide.py-3(data-ride='carousel')
+      .carousel-inner
+        each promo in promotions
+          if promo.order == 1
+            .carousel-item.active
+              .card.w-25.col-sm-12.col-md-4.mx-auto.w-auto.bg-danger.border-0
+                .card-body.p-0
+                  img.img-fluid.m-0(src= promo.imgsrc, alt= "promo"+promo.nom,)
+                .card-footer.text-center.bg-white
+                  h5.card-title.text-dark= promo.nom
+                  p.card-text.text-secondary= promo.description
+          else 
+            .carousel-item
+              .card.w-25.col-sm-12.col-md-4.mx-auto.w-auto.bg-danger.border-0
+                .card-body.p-0
+                  img.img-fluid.m-0(src= promo.imgsrc, alt= "promo"+promo.nom, )
+                .card-footer.text-center.bg-white
+                  h5.card-title.text-dark= promo.nom
+                  p.card-text.text-secondary= promo.description
+        a.carousel-control-prev(href='#carouselPromo' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselPromo' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+  br

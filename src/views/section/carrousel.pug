@@ -1,0 +1,47 @@
+style.
+  /* Make the image fully responsive */
+  .carousel-inner img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 50px;
+  }
+  .carousel-inner h1 {
+  text-align: center;
+  position: relative; 
+  padding-bottom: 8%;
+  line-height: 80%;
+  text-shadow: 4px 4px #111111;
+  }
+
+
+#carousel1.carousel.slide(data-ride='carousel')
+     
+  // The slideshow
+  .carousel-inner 
+        .carousel-item.active
+            img(src='/images/cook_pizza.jpg' alt='Cuisinier' width='100%' height='100%')
+            .carousel-caption
+              .d-block
+                  h1(style='font-size: 8vw;') PIZZA
+                         
+        .carousel-item
+            img(src='/images/sous_marin.jpg' alt='Sous-marin' width='100%' height='100%')
+            .carousel-caption 
+              .d-block
+                  h1(style='font-size: 8vw;') SOUS-MARIN
+           
+        .carousel-item
+            img(src='/images/pasta.jpg' alt='Pasta' width='100%' height='100%')
+            .carousel-caption 
+              .d-block
+                  h1(style='font-size: 8vw;') PÂTES FRAÎCHES
+            
+
+                 
+           
+    
+  // Left and right controls
+  a.carousel-control-prev(href='#carousel1' data-slide='prev')
+    span.carousel-control-prev-icon
+  a.carousel-control-next(href='#carousel1' data-slide='next')
+    span.carousel-control-next-icon

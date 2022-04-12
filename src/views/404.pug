@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+    title error 404
+
+    style.
+      
+      .container.fluid img {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto 0px;
+      }
+
+      .container.fluid button {
+      height: 100%;
+      margin: 0 auto 0px;
+      text-align: center;
+      }
+
+  body 
+    .container.fluid      
+        .col.text-center
+          img(src="/images/404.jpg", alt="erreur 404")
+          br
+          a.btn.btn-dark(href='/') Retrouner à la page d'accueil!
+
+    //- !!!!!!!!!Debug info!!!!!!!!!
+    h1= message
+    h2= error.status
+    pre #{error.stack}

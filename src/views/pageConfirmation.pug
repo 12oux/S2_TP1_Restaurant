@@ -1,0 +1,20 @@
+extends pageLayout
+block content
+
+  .container.my-4.text-center
+    br
+    h1.text-danger Confirmation de votre réservation
+  .card.inline-flex.col-4.m-auto
+      .card-header.bg-white
+        h3.text-danger= reservation.type
+      .card-body
+        p= "Nom: " + reservation.prenom + " " + reservation.nom
+        p= "Tel: " + reservation.telephone
+        p= "Email: " + reservation.email 
+        p= "Date/Heure: " + reservation.date 
+        p= "Nb Personnes: " + reservation.nbPersonnes
+        br
+      .card-footer.text-center.bg-white
+        a(href="/").btn.btn-outline-danger Retour à la page d'acceuil
+  br
+  br 

@@ -1,0 +1,70 @@
+
+.container.my-5
+  if showReviewAck
+    .alert.alert-primary.alert-dismissible.fade.show(role='alert')
+      | Merci pour votre commentaire
+      button.close(type='button' data-dismiss='alert' aria-label='Close')
+        span(aria-hidden='true') &times;
+  .card-deck
+    .card.col-12.col-lg-4.border-0.text-center.my-auto
+      if revStars == 5
+        img(src="/images/fiveStar/5_stars.png", alt="5 étoiles")
+      else if revStars >= 4.5
+        img(src="/images/fiveStar/4_5_stars.png", alt="4.5 étoiles")
+      else if revStars >= 4
+        img(src="/images/fiveStar/4_stars.png", alt="4 étoiles")
+      else if revStars >= 3.5
+        img(src="/images/fiveStar/3_5_stars.png", alt="3.5 étoiles")
+      else if revStars >= 3
+        img(src="/images/fiveStar/3_stars.png", alt="3 étoiles")
+      else if revStars >= 2.5
+        img(src="/images/fiveStar/2_5_stars.png", alt="2.5 étoiles")
+      else if revStars >= 2
+        img(src="/images/fiveStar/2_stars.png", alt="2 étoiles")
+      else if revStars >= 1.5
+        img(src="/images/fiveStar/1_5_stars.png", alt="1.5 étoiles")
+      else if revStars >= 1
+        img(src="/images/fiveStar/1_stars.png", alt="1 étoiles")
+      else
+        img(src="/images/fiveStar/0_5_stars.png", alt="0.5 étoiles")
+      h2= revStars +"/5"
+
+      //- Carrousel de texte des review ici éventuellement
+
+
+    .card.col-12.col-lg-8.border-0
+      .card-body
+        h1.card-title &Eacute;valuation
+        p.card-text
+          | Votre satisfaction est notre priorit&eacute;. L&apos;ambiance, la rapidit&eacute;, le go&ucirc;t et le prix font parties de notre quotidien. Au fil des ans, nous comptons des milliers de clients satisfaits et &ccedil;a nous fait plaisir de le savoir. Dites nous comment a &eacute;t&eacute; votre visite!
+        button.btn.btn-danger(type='button' data-toggle='modal' data-target='#reviewFormModal')
+          | Évaluez votre visite
+        // Modal
+        #reviewFormModal.modal.fade(tabindex='-1' aria-labelledby='reviewFormModalLabel' aria-hidden='true')
+          .modal-dialog
+            .modal-content
+              .modal-header
+                h5#reviewFormModalLabel.modal-title Partager votre évaluation
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                  span(aria-hidden='true') &times;
+              .modal-body
+                form(action="/", method="post") 
+                  form-row
+                    input.p-1.m-2.form-group(type="text", name="nom" placeholder="Nom" required)
+                    br
+                    select.p-1.m-2.form-group(name="nbEtoiles" required)
+                      option(selected) Nombre d'étoiles
+                      option(value=1) 1 Étoile
+                      option(value=2) 2 Étoiles
+                      option(value=3) 3 Étoiles
+                      option(value=4) 4 Étoiles
+                      option(value=5) 5 Étoiles
+                  br
+                  //<label for="review">Commentaire:</label>
+                  label.p-1.mx-2(for='review') Commentaire:
+                  textarea.p-1.mx-2(name="review", cols="50", rows="5" placeholder="Commentaire" required) 
+                  .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Fermer
+                    button.btn.btn-primary(type='submit') Sauvegarder
+
+      br

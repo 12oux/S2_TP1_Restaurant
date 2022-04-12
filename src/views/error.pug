@@ -1,0 +1,46 @@
+doctype html
+html(lang="fr")
+  hea
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    title error 404
+    style.
+      .img-wrapper {
+        position: absolute;
+        //- width: 100%;
+      }
+
+      .img-overlay {
+        position: relative;
+        top: 100px;
+        bottom: 0;
+        left: 10%;
+        right: 0;
+        //- text-align: center;
+      }
+
+      .img-overlay:before {
+        content: ' ';
+        display: block;
+        /* adjust 'height' to position overlay content vertically */
+        //- height: 20%;
+      }
+  body
+    .container-fluid
+      .img-wrapper
+        img.w-100(src="/images/404.jpg", alt="erreur 404")
+      .img-overlay
+        //- a(href="/") 
+        button.btn.btn-danger(type='submit') Retour à la page d'acceuil
+
+      //- !!!!!!!!!Debug info!!!!!!!!!
+      h1= message
+      h2= error.status
+      pre #{error.stack}

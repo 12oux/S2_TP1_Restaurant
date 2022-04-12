@@ -1,0 +1,31 @@
+extends pageLayout
+block content
+  .container.d-flex.justify-content-center.form-group
+    form(action='/reservation', method='POST')
+      br
+      h1.text-danger Réservation
+      br
+      input.p-1.m-1(type='text', id='prenom', name='prenom', value='', placeholder="Prénom", maxLength="100", required) 
+      br
+      input.p-1.m-1(type='text', id='nom', name='nom', value='', placeholder="Nom", maxLength="100", required)
+      br
+      .form-check-inline.p-1.m-1
+        input.form-check-input(type='radio', name='type', value='Salle à Manger' , required, checked)
+        label.form-check-label Salle à Manger &nbsp;&nbsp; 
+        br
+        input.form-check-input(type='radio', name='type', value='Salon Privé', required) 
+        label.form-check-label Salon Privé
+      br
+      input.p-1.m-1(type='text', name='email', value='', placeholder="Email", required)
+      br
+      input.p-1.m-1(type='date', name='date', value='', required)
+      input.p-1.m-1(type='time', min="09:00", max="21:00", name='date', value='', placeholder="Heure", required)
+      br
+      input.p-1.m-1(type='tel', name='telephone', value='', placeholder="Téléphone", required)
+      br
+      input.p-1.m-1(type='number', min="1", name='nbPersonnes', value='', placeholder="Nombre de Personnes", required)
+      br
+      input.btn.btn-success.p-2.m-1(type='submit', value='Sauvegarder') 
+  br
+  br
+

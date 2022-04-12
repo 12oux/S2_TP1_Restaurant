@@ -1,0 +1,31 @@
+
+extends pageLayout
+block content
+  .container-fluid.bg-dark
+    h1.text-danger.text-center.pt-5 Galerie de photos
+    #carouselBigPhoto.carousel.slide.py-3(data-ride='carousel')
+      .carousel-inner
+        each galerieCard in galerieCards
+          if galerieCard.id == idActive
+            .carousel-item.active
+              .card.w-50.mx-auto
+                .card-body.p-0
+                  img.img-fluid.m-0(src= galerieCard.src, alt= galerieCard.alt )
+                .card-footer.text-center
+                  p.card-text.text-secondary= galerieCard.tooltip
+          else 
+            .carousel-item
+              .card.w-50.mx-auto
+                .card-body.p-0
+                  img.img-fluid.m-0(src= galerieCard.src, alt= galerieCard.alt)
+                .card-footer.text-center
+                  p.card-text.text-secondary= galerieCard.tooltip
+        a.carousel-control-prev(href='#carouselBigPhoto' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselBigPhoto' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+
+    .d-flex.justify-content-center.py-2
+      a.btn.btn-danger.btn-lg.mb-5(href="/galerie") Fermer
